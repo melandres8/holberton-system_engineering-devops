@@ -1,0 +1,3 @@
+# Where am I?
+
+This project have all the tasks about Shell Basics like commands, scripts and more...
