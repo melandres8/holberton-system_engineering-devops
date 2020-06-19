@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # FizzBuzz bash version
 
-let i=0
+let i=1
 while [ $i -le 100 ]; do
 	if [[ $((i%5)) == 0 && $((i%3)) == 0 ]]; then
 		echo "FizzBuzz"
