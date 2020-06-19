@@ -2,7 +2,7 @@
 # Making a story with a bash scrip and passwd file
 
 IFS=:
-while read USERNAME GROUPID HOME_DIRECTORY COMMAND USERID PASSWD USERID_INFO; do
+while read USERNAME PASSWD USERID GROUPID USERID_INFO HOME_DIRECTORY COMMAND; do
 	echo "The user $USERNAME is part of the $GROUPID gang, lives in $HOME_DIRECTORY and rides $COMMAND. $USERID's place is protected by the passcode $PASSWD, more info about the user here: $USERID_INFO"
 done < /etc/passwd
 
