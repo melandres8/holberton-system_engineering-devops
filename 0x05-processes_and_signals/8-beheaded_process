@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Killing proccess
+
+pkill --signal SIGKILL -f "7-high"
+
