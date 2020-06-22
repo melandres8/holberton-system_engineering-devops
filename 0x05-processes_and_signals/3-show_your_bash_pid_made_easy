@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Displaying PID with name proccess
+
+pgrep -l bash
+
