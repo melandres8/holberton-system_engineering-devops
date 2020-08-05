@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Starting an apache server to got a 'Hello Holberton'
+
+sudo /etc/init.d/apache2 start
