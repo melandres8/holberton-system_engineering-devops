@@ -4,8 +4,8 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-sudo echo "Holberton School" | sudo tee /var/www/html/index.html
-sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-sudo echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
-sudo sed -i "/listen 80 default_server/a error_page 404 /custom_404.html;\n \t location = /custom_404.html {\n \t\t root /usr/share/nginx/html;\n \t\t internal;\n \t}" /etc/nginx/sites-available/default
+echo "Holberton School" | sudo tee /var/www/html/index.html
+sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+sed -i '/listen 80 default_server/a error_page 404 /custom_404.html; location = /custom_404.html {root /usr/share/nginx/html;\n internal;}' /etc/nginx/sites-available/default
 sudo /etc/init.d/nginx restart
