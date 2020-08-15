@@ -11,7 +11,7 @@ frontend front
 backend back
     balance roundrobin
     mode http
-    server 1492-web-01 34.75.200.174:80 check
-    server 1492-web-02 34.229.85.234:80 check
+    server 1631-web-01 35.237.26.128:80 check
+    server 1631-web-02 3.92.66.113:80 check
 EOL
 sudo service haproxy restart
