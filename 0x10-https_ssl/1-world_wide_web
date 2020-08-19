@@ -3,7 +3,7 @@
 
 display_func() {
     echo -n "The subdomain $2"
-    dig "$2" "$1" | grep -A1 "ANSWER SECTION:" | tail -n1 | awk '{print " is a " $4 " record and point to " $5}'
+    dig "$2"."$1" | grep -A1 "ANSWER SECTION:" | tail -n1 | awk '{print " is a " $4 " record and points to " $5}'
 }
 
 
