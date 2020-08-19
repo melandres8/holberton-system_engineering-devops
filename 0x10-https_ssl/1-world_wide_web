@@ -1,1 +1,16 @@
 #!/usr/bin/env bash
+# script that will display information about subdomains.
+
+display_func() {
+    echo -n "The subdomain $2"
+    dig "$2"."$1" | grep -A1 "ANSWER SECTION:" | tail -n1 | awk '{print " is a " $4 " record and point to " $5}'
+}
+
+
+if [ $# -eq 2 ]; then
+    display_func "$1" "$2"
+else
+    for subdomain in www lb-01 web-01 web-02; do
+        display_func "$1" "$subdomain"
+    done
+fi
