@@ -21,12 +21,12 @@ def TODO(user_id):
 
     tasks_size = len(all_tasks)
     done_len = len(done_tasks)
-    print("Employee {} is done with ({}/{}):\
+    print("Employee {} is done with tasks({}/{}):\
     ".format(username, done_len, tasks_size))
 
     for task in done_tasks:
         task_title = task.get('title')
-        print("\t" + task_title)
+        print("\t " + task_title)
 
 
 if __name__ == "__main__":
