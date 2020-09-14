@@ -14,7 +14,7 @@ def export_to_csv(user_id):
     url = 'https://jsonplaceholder.typicode.com'
     users_url = "{}/users/{}".format(url, user_id)
     username = requests.get(users_url).json().get('name')
-    all_tasks = requests.get(f'{url}/todos?userId={user_id}').json()
+    all_tasks = requests.get('{}/todos?userId={}'.format(url, user_id)).json()
 
     with open('{}.csv'.format(user_id), 'w') as csv_file:
         for task in all_tasks:
