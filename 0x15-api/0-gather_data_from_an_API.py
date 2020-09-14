@@ -14,7 +14,7 @@ def TODO(user_id):
     """
     url = 'https://jsonplaceholder.typicode.com'
     users_url = "{}/users/{}".format(url, user_id)
-    EMPLOYEE_NAME = requests.get(users_url).json().get('name')
+    username = requests.get(users_url).json().get('name')
     all_tasks = requests.get('{}/todos?userId={}'.format(url, user_id)).json()
     completed = '{}/todos?userId={}&completed=true'.format(url, user_id)
     done_tasks = requests.get(completed).json()
@@ -22,11 +22,11 @@ def TODO(user_id):
     tasks_size = len(all_tasks)
     done_len = len(done_tasks)
     print("Employee {} is done with ({}/{}):\
-    ".format(EMPLOYEE_NAME, done_len, tasks_size))
+    ".format(username, done_len, tasks_size))
 
     for task in done_tasks:
-        TASK_TITLE = task.get('title')
-        print("\t" + TASK_TITLE)
+        task_title = task.get('title')
+        print("\t" + task_title)
 
 
 if __name__ == "__main__":
