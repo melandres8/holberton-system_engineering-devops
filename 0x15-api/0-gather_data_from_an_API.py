@@ -26,7 +26,7 @@ def TODO(user_id):
 
     for task in done_tasks:
         TASK_TITLE = task.get('title')
-        print("\t " + TASK_TITLE)
+        print("\t" + TASK_TITLE)
 
 
 if __name__ == "__main__":
