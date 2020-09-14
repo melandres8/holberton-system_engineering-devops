@@ -13,7 +13,7 @@ def export_to_json(user_id):
     """
     url = 'https://jsonplaceholder.typicode.com'
     users_url = "{}/users/{}".format(url, user_id)
-    username = requests.get(users_url).json().get('name')
+    username = requests.get(users_url).json().get('username')
     all_tasks = requests.get('{}/todos?userId={}'.format(url, user_id)).json()
 
     dic = {}
