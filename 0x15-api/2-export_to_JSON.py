@@ -14,7 +14,7 @@ def export_to_json(user_id):
     url = 'https://jsonplaceholder.typicode.com'
     users_url = "{}/users/{}".format(url, user_id)
     username = requests.get(users_url).json().get('name')
-    all_tasks = requests.get(f'{url}/todos?userId={user_id}').json()
+    all_tasks = requests.get('{}/todos?userId={}'.format(url, user_id)).json()
 
     dic = {}
     list_of_dicts = []
