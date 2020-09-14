@@ -17,21 +17,11 @@ def export_to_csv(user_id):
     all_tasks = requests.get('{}/todos?userId={}'.format(url, user_id)).json()
 
     with open('{}.csv'.format(user_id), 'w') as csv_file:
+        writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
         for task in all_tasks:
             task_title = task.get('title')
             task_status = task.get('completed')
-            fields = ['userId', 'name', 'completed', 'title']
-            writer = csv.DictWriter(
-                csv_file,
-                fieldnames=fields,
-                quoting=csv.QUOTE_ALL,
-            )
-            writer.writerow({
-                'userId': user_id,
-                'name': username,
-                'completed': task_status,
-                'title': task_title,
-            })
+            writer.writerow([user_id, username, task_status, task_title])
 
 
 if __name__ == "__main__":
